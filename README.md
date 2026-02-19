@@ -181,7 +181,7 @@ Django REST Framework Browsable API
 
 ☁ Deployment
 
-This project can be deployed on platforms like:
+This project is deployed on the platforms:
 Render
 
 
