@@ -142,7 +142,23 @@ You can filter vehicles using query parameters:
 /api/vehicles/?fuel_type=Electric
 /api/vehicles/?is_available=true
 
+📦 Sample Vehicle data JSON
 
+Use this when creating a Vechile:
+
+```bash
+
+      {
+        "name": "Crysta",
+        "brand": "Toyota",
+        "year": 2012,
+        "price_per_day": "3500.00",
+        "fuel_type": "Diesel",
+        "is_available": true
+     }
+
+
+```
 📦 Sample Booking JSON
 
 Use this when creating a booking:
@@ -179,6 +195,69 @@ APIs can be tested using:
 Postman
 Django REST Framework Browsable API
 
+1️⃣ Test GET – List Vehicles
+
+Method: GET
+
+URL:
+
+http://127.0.0.1:8000/api/vehicles/
+
+Click Send
+
+You will receive a JSON response with all vehicles.
+
+2️⃣ Test POST – Create Vehicle
+
+Method: POST
+
+URL:
+
+http://127.0.0.1:8000/api/vehicles/
+
+Go to Body → raw → JSON
+
+Add:
+
+{
+  "name": "Crysta",
+  "brand": "Toyota",
+  "year": 2012,
+  "price_per_day": "3500.00",
+  "fuel_type": "Diesel",
+  "is_available": true
+}
+
+Click Send
+
+3️⃣ Test POST – Create Booking
+
+Method: POST
+
+URL:
+
+http://127.0.0.1:8000/api/bookings/
+
+Body → raw → JSON
+
+{
+  "vehicle": 1,
+  "customer_name": "Rahul Sharma",
+  "customer_phone": "9876543210",
+  "start_date": "2026-03-10",
+  "end_date": "2026-03-15"
+}
+
+Click Send
+
+If successful:
+
+Booking will be created
+
+Total amount will be calculated automatically
+
+Vehicle availability will be updated
+
 ☁ Deployment
 
 This project is deployed on the platforms:
@@ -188,3 +267,25 @@ Render
 👨‍💻 Author
 
 Developed as part of a Django Backend Evaluation Task.
+
+
+## 🌐 Google Drive link of ScreenRecordings
+
+https://drive.google.com/file/d/1H5si2WVgwMgf2z-62CRuHDawgRw2jpco/view?usp=drive_link
+
+
+## 🌐 Live Deployment
+
+This project is deployed on Render.
+
+### 🔗 Base URL
+https://vehicle-system-1.onrender.com/
+
+### 🚗 Vehicles API
+GET: https://vehicle-system-1.onrender.com/api/vehicles/
+
+### 📅 Bookings API
+GET: https://vehicle-system-1.onrender.com/api/bookings/
+
+### 🔐 Admin Panel
+https://vehicle-system-1.onrender.com/admin/
